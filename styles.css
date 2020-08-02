@@ -1,0 +1,16 @@
+:root{
+    --verde: #038D00;
+    --vermelho: #A70000;
+    --amarelo: #CEA102;
+    --roxo: #5A0092;
+    --cinza: #322F2F;
+    --cinza-claro: #868383;
+}
+
+html, *{
+    margin: 0;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+}
