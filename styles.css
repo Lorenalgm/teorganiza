@@ -110,3 +110,7 @@ body{
     text-align: center;
     margin-top: 0.3em;
 }
+
+.new-project-modal{
+    display: none;
+}
