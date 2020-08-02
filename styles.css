@@ -13,4 +13,92 @@ html, *{
 
 body{
     font-family: 'Lato', sans-serif;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    margin: 0 3em;
+    justify-content: space-between;
+}
+
+.menu{
+    background-color: var(--cinza);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 26%;
+    border-radius: 25px;
+    height: 95%;
+}
+
+.profile{
+    margin: 3em 0;
+    text-align: center;
+}
+
+.profile h3{
+    font-weight: 400;
+}
+
+.projects-menu{
+    margin: 0 1em;
+}
+
+.project-menu{
+    display: flex;
+    margin-bottom: 1.5em;
+    font-size: 14px;
+    font-size: 14px;
+}
+
+.color-menu{
+    background-color: var(--verde);
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin-right: 0.5em;
+}
+
+.dashboard{
+    height: 100%;
+    width: 90%;
+    margin-top: 2em;
+    margin-left: 3em;
+}
+
+.dashboard-title{
+    color: var(--cinza-claro);
+}
+
+.projects{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project{
+    margin: 2em;
+}
+
+.square{
+    width: 6em;
+    height: 6em;
+    background-color: var(--verde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 1px solid var(--cinza-claro);
+    color: #C4C4C4;
+}
+
+.new-project .square{
+    background-color: transparent;
+    border: 3px solid #C4C4C4;
+}
+
+.project h3{
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0.3em;
 }
