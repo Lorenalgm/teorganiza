@@ -80,6 +80,7 @@ body{
 }
 
 .square{
+    cursor: pointer;
     width: 6em;
     height: 6em;
     background-color: var(--verde);
@@ -89,11 +90,18 @@ body{
     border-radius: 20px;
     border: 1px solid var(--cinza-claro);
     color: #C4C4C4;
+    box-shadow: 1px 1px 10px var(--cinza-claro);
 }
 
 .new-project .square{
     background-color: transparent;
-    border: 3px solid #C4C4C4;
+    border: 1px solid #C4C4C4;
+}
+
+.new-project .square:hover{
+    transition: 0.5s;
+    background-color: #C4C4C4;
+    color: var(--cinza-claro);
 }
 
 .project h3{
