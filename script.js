@@ -1,5 +1,6 @@
 var project = document.querySelector('.new-project');
 var projects = document.querySelector('.projects');
+var menu = document.querySelector('.projects-menu');
 var modal = document.querySelector('.new-project-modal');
 var save = document.querySelector('.button');
 
@@ -13,6 +14,24 @@ function handleNewProject(){
     modal.style.display = 'none';
     var name = document.querySelector('.name');
     var sigla = document.querySelector('.sigla');
+    var color = document.querySelector('input[name="color"]:checked').value;
+
+    if(color == 'verde'){
+        var color_hash = '#038D00';
+    }
+
+    if(color == 'vermelho'){
+        var color_hash = '#A70000';
+    }
+
+    if(color == 'amarelo'){
+        var color_hash = '#CEA102';
+    }
+
+    if(color == 'roxo'){
+        var color_hash = '#5A0092';
+        
+    }
 
     var new_project = document.createElement('div');
     new_project.className = 'project';
@@ -20,6 +39,7 @@ function handleNewProject(){
 
     var square = document.createElement('div');
     square.className = 'square';
+    square.style.backgroundColor = color_hash;
     new_project.append(square);
 
     var titles_sigla = document.createElement('h1');
@@ -30,6 +50,18 @@ function handleNewProject(){
     title.textContent = name.value;
     new_project.append(title);
 
+    var new_project_menu = document.createElement('div');
+    new_project_menu.className = 'project-menu';
+    menu.append(new_project_menu);
+
+    var color_menu = document.createElement('div');
+    color_menu.className = 'color-menu';
+    color_menu.style.backgroundColor = color_hash;
+    new_project_menu.append(color_menu);
+
+    var title_menu = document.createElement('h3');
+    title_menu.textContent = name.value;
+    new_project_menu.append(title_menu);
 }
 
 save.addEventListener("click", handleNewProject);
