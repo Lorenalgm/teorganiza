@@ -6,69 +6,53 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <div class="menu">
-            <div class="profile">
-                <img src="assets/profile.png" alt="profile" />
-                <h3>@lorenalgm</h3>
-            </div>
-            <div class="projects-menu">
-                <div class="project-menu">
-                    <div class="color-menu"></div>
-                    <h3>Desenvolvimento</h3>
-                </div>
-                <div class="project-menu">
-                    <div class="color-menu"></div>
-                    <h3>Marketing</h3>
-                </div>
-                <div class="project-menu">
-                    <div class="color-menu"></div>
-                    <h3>Sucesso do Cliente</h3>
-                </div>
-            </div>
-        </div>
-        <div class="dashboard">
-            <h1 class="dashboard-title">Meus projetos</h1>
-            <div class="projects">
-                <div class="project">
-                    <div class="square">
-                        <h1>D</h1>
-                    </div>
-                   <h3>Desenvolvimento</h3> 
-                </div>
-                <div class="project">
-                    <div class="square">
-                        <h1>M</h1>
-                    </div>
-                   <h3>Marketing</h3> 
-                </div>
-                <div class="project">
-                    <div class="square">
-                        <h1>CS</h1>
-                    </div>
-                   <h3>Sucesso do Cliente</h3> 
-                </div>
-                <div class="project new-project">
-                    <div class="square">
-                        <h1>+</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="new-project-modal">
-            <h1>Novo projeto</h1>
-            <div class="form">
-                <input type="text" class="name" placeholder="Nome do projeto">
-                <input type="text" class="sigla" placeholder="Sigla">
-                <div class="cores">
-                    <input type="radio" name="color" id="verde" value="verde">
-                    <input type="radio" name="color" id="vermelho" value="vermelho">
-                    <input type="radio" name="color" id="amarelo" value="amarelo">
-                    <input type="radio" name="color" id="roxo" value="roxo">
+           <div class="modal-form">
+                <h1>Novo projeto</h1>
+                <div class="form">
+                    <input type="text" class="name" placeholder="Nome do projeto">
+                    <input type="text" class="sigla" placeholder="Sigla">
+                    <div class="cores">
+                        <input type="radio" name="color" id="verde" value="verde">
+                        <input type="radio" name="color" id="vermelho" value="vermelho">
+                        <input type="radio" name="color" id="amarelo" value="amarelo">
+                        <input type="radio" name="color" id="roxo" value="roxo">
 
+                    </div>
+                </div>
+                <a href="#" class="button">Salvar</a>
+           </div>
+        </div>
+        <div class="container-website">
+            <div class="menu">
+                <div class="profile">
+                    <img src="assets/profile.png" alt="profile" />
+                    <h3>@lorenalgm</h3>
+                </div>
+                <div class="projects-menu">
+                    <div class="project-menu">
+                        <div class="color-menu"></div>
+                        <h3>Sucesso do Cliente</h3>
+                    </div>
                 </div>
             </div>
-            <a href="#" class="button">Salvar</a>
-        </div>
+            <div class="dashboard">
+                <h1 class="dashboard-title">Meus projetos</h1>
+                <div class="projects">
+                    <div class="project">
+                        <div class="square">
+                            <h1>CS</h1>
+                        </div>
+                       <h3>Sucesso do Cliente</h3> 
+                    </div>
+                    <div class="project new-project">
+                        <div class="square">
+                            <h1>+</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>       
         <script src="script.js"></script>
     </body>
 </html>

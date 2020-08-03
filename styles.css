@@ -13,11 +13,15 @@ html, *{
 
 body{
     font-family: 'Lato', sans-serif;
-    display: flex;
     height: 100vh;
+}
+
+.container-website{
+    display: flex;
     align-items: center;
-    margin: 0 3em;
+    margin: 0 2em;
     justify-content: space-between;
+    height: 100%;
 }
 
 .menu{
@@ -61,7 +65,7 @@ body{
 
 .dashboard{
     height: 100%;
-    width: 90%;
+    width: 74%;
     margin-top: 2em;
     margin-left: 3em;
 }
@@ -76,7 +80,8 @@ body{
 }
 
 .project{
-    margin: 2em;
+    margin: 1em 0;
+    margin-right: 2em;
 }
 
 .square{
@@ -112,5 +117,93 @@ body{
 }
 
 .new-project-modal{
+    margin-top: 8em;
+    height: 100%;
     display: none;
+}
+
+.modal-form{
+    border-radius: 25px;
+    padding: 2em;
+    background-color: var(--cinza);
+    width: 30em;
+    height: 14em;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.modal-form h1{
+    margin-bottom: 0.6em;
+}
+
+.modal-form input{
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 14px;
+    border: none;
+}
+.modal-form .name{
+    width: 15em;
+}
+
+.modal-form .sigla{
+    width: 7em;
+    margin-bottom: 1em;
+}
+
+.cores input{
+    margin: 0 0.5em;
+}
+
+#verde{
+    background: var(--verde);
+    background-color: var(--verde);
+    color: var(--verde);
+}
+
+input[type='radio']:after {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    cursor: pointer;
+}
+
+#verde:after {
+    background-color: var(--verde);
+} 
+
+#vermelho:after {
+    background-color: var(--vermelho);
+}
+
+#amarelo:after {
+    background-color: var(--amarelo);
+}
+
+#roxo:after {
+    background-color: var(--roxo);
+}
+
+input[type='radio']:checked:after {
+    background-color: #ffa500;
+    border: 2px solid white;
+}
+
+.button{
+    background-color: #C4C4C4;
+    padding: 1em 3em;
+    text-decoration: none;
+    color: var(--cinza);
+    font-weight: bold;
+    font-size: 20px;
+    display: inline-block;
+    border-radius: 25px;
+    margin: 1em 0;
 }
