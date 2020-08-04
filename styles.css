@@ -22,6 +22,8 @@ body{
     margin: 0 2em;
     justify-content: space-between;
     height: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .menu{
@@ -117,9 +119,10 @@ body{
 }
 
 .new-project-modal{
-    margin-top: 8em;
-    height: 100%;
     display: none;
+    position: absolute;
+    margin: 8em 25em;
+    z-index: 2;
 }
 
 .modal-form{

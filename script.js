@@ -2,16 +2,19 @@ var project = document.querySelector('.new-project');
 var projects = document.querySelector('.projects');
 var menu = document.querySelector('.projects-menu');
 var modal = document.querySelector('.new-project-modal');
+var container = document.querySelector('.container-website');
 var save = document.querySelector('.button');
 
 function handleModal(){
     modal.style.display = 'block';
+    container.style.visibility = 'hidden';
 }
 
 project.addEventListener("click", handleModal);
 
 function handleNewProject(){
     modal.style.display = 'none';
+    container.style.visibility = 'visible';
     var name = document.querySelector('.name');
     var sigla = document.querySelector('.sigla');
     var color = document.querySelector('input[name="color"]:checked').value;
@@ -62,6 +65,9 @@ function handleNewProject(){
     var title_menu = document.createElement('h3');
     title_menu.textContent = name.value;
     new_project_menu.append(title_menu);
+
+    name.value = '';
+    sigla.value = '';
 }
 
 save.addEventListener("click", handleNewProject);
