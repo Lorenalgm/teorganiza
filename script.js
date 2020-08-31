@@ -15,16 +15,25 @@ const projectColors = {
     "vermelho": '#A70000'
 };
 
+const [name, sigla] = [ $('.name'), $('.sigla') ];
+
 function handleModal(){
     modal.style.display = 'block';
     container.style.visibility = 'hidden';
 }
 
-function handleNewProject(){
+function closeModal () {
     modal.style.display = 'none';
     container.style.visibility = 'visible';
-    var name = $('.name');
-    var sigla = $('.sigla');
+}
+
+function handleNewProject(){
+    if (!name.value.trim() || !sigla.value.trim()) {
+        closeModal();
+
+        return;
+    }
+        
     const color = $('input[name="color"]:checked').value;
 
     // captura a cor recebida de um dos inputs selecionado pelo usuário
