@@ -8,6 +8,13 @@ const save      = $('.button'),
       modal     = $('.new-project-modal'),
       container = $('.container-website');
 
+const projectColors = {
+    "roxo": '#5A0092',
+    "verde": '#038D00',
+    "amarelo": '#CEA102',
+    "vermelho": '#A70000'
+};
+
 function handleModal(){
     modal.style.display = 'block';
     container.style.visibility = 'hidden';
@@ -22,22 +29,8 @@ function handleNewProject(){
     var sigla = $('.sigla');
     var color = $('input[name="color"]:checked').value;
 
-    if(color == 'verde'){
-        var color_hash = '#038D00';
-    }
-
-    if(color == 'vermelho'){
-        var color_hash = '#A70000';
-    }
-
-    if(color == 'amarelo'){
-        var color_hash = '#CEA102';
-    }
-
-    if(color == 'roxo'){
-        var color_hash = '#5A0092';
-        
-    }
+    // captura a cor recebida de um dos inputs selecionado pelo usuário
+    const color_hash = projectColors[color];
 
     var new_project = document.createElement('div');
     new_project.className = 'project';
