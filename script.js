@@ -20,50 +20,38 @@ function handleModal(){
     container.style.visibility = 'hidden';
 }
 
-project.addEventListener("click", handleModal);
-
 function handleNewProject(){
     modal.style.display = 'none';
     container.style.visibility = 'visible';
     var name = $('.name');
     var sigla = $('.sigla');
-    var color = $('input[name="color"]:checked').value;
+    const color = $('input[name="color"]:checked').value;
 
     // captura a cor recebida de um dos inputs selecionado pelo usuário
     const color_hash = projectColors[color];
 
-    var new_project = document.createElement('div');
-    new_project.className = 'project';
-    projects.prepend(new_project);
+    // estrutura do projeto criado via template string
+    const new_project = `
+        <div class="project">
+            <div class="square" style="background-color: ${color_hash}">
+                <h1>${sigla.value}</h1>
+            </div>
+            <h3>${name.value}</h3>
+        </div>
+    `;
 
-    var square = document.createElement('div');
-    square.className = 'square';
-    square.style.backgroundColor = color_hash;
-    new_project.append(square);
+    // estrutura da lista do projeto criado via template string
+    const new_project_menu = `
+        <div class="project-menu">
+            <div class="color-menu" style="background-color: ${color_hash}"></div>
+            <h3>${name.value}</h3>
+        </div>
+    `;
 
-    var titles_sigla = document.createElement('h1');
-    titles_sigla.textContent = sigla.value;
-    square.append(titles_sigla);
-    
-    var title = document.createElement('h3');
-    title.textContent = name.value;
-    new_project.append(title);
-
-    var new_project_menu = document.createElement('div');
-    new_project_menu.className = 'project-menu';
-    menu.append(new_project_menu);
-
-    var color_menu = document.createElement('div');
-    color_menu.className = 'color-menu';
-    color_menu.style.backgroundColor = color_hash;
-    new_project_menu.append(color_menu);
-
-    var title_menu = document.createElement('h3');
-    title_menu.textContent = name.value;
-    new_project_menu.append(title_menu);
+    menu.innerHTML    += new_project_menu;
+    projects.innerHTML = new_project + projects.innerHTML;
 
     name.value = '';
     sigla.value = '';
 }
 
-save.addEventListener("click", handleNewProject);
