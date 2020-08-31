@@ -27,6 +27,11 @@ function closeModal () {
     container.style.visibility = 'visible';
 }
 
+function clearInputs () {
+    name.value  = '';
+    sigla.value = '';
+}
+
 function handleNewProject(){
     if (!name.value.trim() || !sigla.value.trim()) {
         closeModal();
@@ -60,7 +65,7 @@ function handleNewProject(){
     menu.innerHTML    += new_project_menu;
     projects.innerHTML = new_project + projects.innerHTML;
 
-    name.value = '';
-    sigla.value = '';
+    clearInputs();
+    closeModal();
 }
 
