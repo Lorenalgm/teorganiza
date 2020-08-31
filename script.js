@@ -1,9 +1,12 @@
-var project = document.querySelector('.new-project');
-var projects = document.querySelector('.projects');
-var menu = document.querySelector('.projects-menu');
-var modal = document.querySelector('.new-project-modal');
-var container = document.querySelector('.container-website');
-var save = document.querySelector('.button');
+
+const $ = document.querySelector.bind(document);
+
+const save      = $('.button'),
+      projects  = $('.projects'),
+      project   = $('.new-project'),
+      menu      = $('.projects-menu'),
+      modal     = $('.new-project-modal'),
+      container = $('.container-website');
 
 function handleModal(){
     modal.style.display = 'block';
@@ -15,9 +18,9 @@ project.addEventListener("click", handleModal);
 function handleNewProject(){
     modal.style.display = 'none';
     container.style.visibility = 'visible';
-    var name = document.querySelector('.name');
-    var sigla = document.querySelector('.sigla');
-    var color = document.querySelector('input[name="color"]:checked').value;
+    var name = $('.name');
+    var sigla = $('.sigla');
+    var color = $('input[name="color"]:checked').value;
 
     if(color == 'verde'){
         var color_hash = '#038D00';
