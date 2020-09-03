@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
     <head>
+        <meta charset="UTF-8" />
         <title>Te Organiza</title>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css" />
@@ -14,14 +15,14 @@
                     <input type="text" class="sigla" placeholder="Sigla">
                     <div class="cores">
                         <label>Identificação:</label>
-                        <input type="radio" name="color" id="verde" value="verde">
+                        <input type="radio" name="color" id="verde" value="verde" checked="checked">
                         <input type="radio" name="color" id="vermelho" value="vermelho">
                         <input type="radio" name="color" id="amarelo" value="amarelo">
                         <input type="radio" name="color" id="roxo" value="roxo">
 
                     </div>
                 </div>
-                <a href="#" class="button">Salvar</a>
+                <a href="#" class="button" onClick="handleNewProject()">Salvar</a>
            </div>
         </div>
         <div class="container-website">
@@ -46,7 +47,7 @@
                         </div>
                        <h3>Sucesso do Cliente</h3> 
                     </div>
-                    <div class="project new-project">
+                    <div class="project new-project" onClick="handleModal()">
                         <div class="square">
                             <h1>+</h1>
                         </div>

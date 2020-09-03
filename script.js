@@ -1,73 +1,71 @@
-var project = document.querySelector('.new-project');
-var projects = document.querySelector('.projects');
-var menu = document.querySelector('.projects-menu');
-var modal = document.querySelector('.new-project-modal');
-var container = document.querySelector('.container-website');
-var save = document.querySelector('.button');
+
+const $ = document.querySelector.bind(document);
+
+const save      = $('.button'),
+      projects  = $('.projects'),
+      project   = $('.new-project'),
+      menu      = $('.projects-menu'),
+      modal     = $('.new-project-modal'),
+      container = $('.container-website');
+
+const projectColors = {
+    "roxo": '#5A0092',
+    "verde": '#038D00',
+    "amarelo": '#CEA102',
+    "vermelho": '#A70000'
+};
+
+const [name, sigla] = [ $('.name'), $('.sigla') ];
 
 function handleModal(){
     modal.style.display = 'block';
     container.style.visibility = 'hidden';
 }
 
-project.addEventListener("click", handleModal);
-
-function handleNewProject(){
+function closeModal () {
     modal.style.display = 'none';
     container.style.visibility = 'visible';
-    var name = document.querySelector('.name');
-    var sigla = document.querySelector('.sigla');
-    var color = document.querySelector('input[name="color"]:checked').value;
+}
 
-    if(color == 'verde'){
-        var color_hash = '#038D00';
-    }
-
-    if(color == 'vermelho'){
-        var color_hash = '#A70000';
-    }
-
-    if(color == 'amarelo'){
-        var color_hash = '#CEA102';
-    }
-
-    if(color == 'roxo'){
-        var color_hash = '#5A0092';
-        
-    }
-
-    var new_project = document.createElement('div');
-    new_project.className = 'project';
-    projects.prepend(new_project);
-
-    var square = document.createElement('div');
-    square.className = 'square';
-    square.style.backgroundColor = color_hash;
-    new_project.append(square);
-
-    var titles_sigla = document.createElement('h1');
-    titles_sigla.textContent = sigla.value;
-    square.append(titles_sigla);
-    
-    var title = document.createElement('h3');
-    title.textContent = name.value;
-    new_project.append(title);
-
-    var new_project_menu = document.createElement('div');
-    new_project_menu.className = 'project-menu';
-    menu.append(new_project_menu);
-
-    var color_menu = document.createElement('div');
-    color_menu.className = 'color-menu';
-    color_menu.style.backgroundColor = color_hash;
-    new_project_menu.append(color_menu);
-
-    var title_menu = document.createElement('h3');
-    title_menu.textContent = name.value;
-    new_project_menu.append(title_menu);
-
-    name.value = '';
+function clearInputs () {
+    name.value  = '';
     sigla.value = '';
 }
 
-save.addEventListener("click", handleNewProject);
+function handleNewProject(){
+    if (!name.value.trim() || !sigla.value.trim()) {
+        closeModal();
+
+        return;
+    }
+        
+    const color = $('input[name="color"]:checked').value;
+
+    // captura a cor recebida de um dos inputs selecionado pelo usuário
+    const color_hash = projectColors[color];
+
+    // estrutura do projeto criado via template string
+    const new_project = `
+        <div class="project">
+            <div class="square" style="background-color: ${color_hash}">
+                <h1>${sigla.value}</h1>
+            </div>
+            <h3>${name.value}</h3>
+        </div>
+    `;
+
+    // estrutura da lista do projeto criado via template string
+    const new_project_menu = `
+        <div class="project-menu">
+            <div class="color-menu" style="background-color: ${color_hash}"></div>
+            <h3>${name.value}</h3>
+        </div>
+    `;
+
+    menu.innerHTML    += new_project_menu;
+    projects.innerHTML = new_project + projects.innerHTML;
+
+    clearInputs();
+    closeModal();
+}
+
